@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ICartBusiness.cs" />
+    <Compile Include="Business\CartBusiness.cs" />
+    <Compile Include="Business\CategoryBusiness.cs" />
+    <Compile Include="Business\ProductBusiness.cs" />
+    <Compile Include="Interface\ICampaignBusiness.cs" />
+    <Compile Include="Interface\ICartBusiness.cs" />
+    <Compile Include="Interface\IProductBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
