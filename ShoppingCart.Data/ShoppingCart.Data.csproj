@@ -41,8 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CategoryData.cs" />
+    <Compile Include="Data\CampaignData.cs" />
+    <Compile Include="Data\CouponData.cs" />
     <Compile Include="Data\ProductData.cs" />
+    <Compile Include="Interface\IBaseData.cs" />
+    <Compile Include="Interface\ICampaignData.cs" />
     <Compile Include="Interface\ICategoryData.cs" />
+    <Compile Include="Interface\ICouponData.cs" />
     <Compile Include="Interface\IProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

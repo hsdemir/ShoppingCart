@@ -1,12 +1,25 @@
-﻿using System;
+﻿using ShoppingCart.Business.Interfaces;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ShoppingCart.Model;
 
 namespace ShoppingCart.Business.Business
 {
-    public class CartBusiness
+    public class CartBusiness : ICartBusiness
     {
+        public bool AddProduct(Product product, int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ApplyCampaigns(List<Campaign> campaignList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ApplyCoupon(Coupon coupon)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

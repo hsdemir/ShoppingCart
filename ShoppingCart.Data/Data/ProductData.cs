@@ -9,7 +9,7 @@ namespace ShoppingCart.Data
     public class ProductData : IProductData
     {
         //Database
-        List<Product> _productList = new List<Product> {
+        private readonly List<Product> _productList = new List<Product> {
             new Product { Id = 1, Title = "Mavi Kol Saati", Price = 210 },
             new Product { Id = 2, Title = "Mavi Kol Saati", Price = 210 },
             new Product { Id = 3, Title = "Mavi Kol Saati", Price = 210 },
@@ -22,12 +22,12 @@ namespace ShoppingCart.Data
             return _productList;
         }
 
-        Product IProductData.GetById(int id)
+        public Product GetById(int id)
         {
             return _productList.FirstOrDefault(x => x.Id == id);
         }
 
-        Product IProductData.GetByTitle(string title)
+        public Product GetByTitle(string title)
         {
             return _productList.FirstOrDefault(x => x.Title == title);
         }

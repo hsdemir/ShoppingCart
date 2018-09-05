@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShoppingCart.Business.Interface;
+using ShoppingCart.Model;
 
 namespace ShoppingCart.Business.Interfaces
 {
-    interface ICampaignBusiness
+    interface ICampaignBusiness : IBaseBusiness<Campaign>
     {
     }
 }

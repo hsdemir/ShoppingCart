@@ -2,23 +2,22 @@
 using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
-using ShoppingCart.Data;
 
 namespace ShoppingCart.Business.Business
 {
-    public class CategoryBusiness : ICategoryBusiness
+    public class CouponBusiness : ICouponBusiness
     {
-        public Category GetById(int id)
+        public Coupon GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Category GetByTitle(string title)
+        public Coupon GetByTitle(string title)
         {
             throw new NotImplementedException();
         }
 
-        public List<Category> GetList()
+        public List<Coupon> GetList()
         {
             throw new NotImplementedException();
         }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoppingCart.Data.Interface
+namespace ShoppingCart.Business.Interface
 {
-    interface ICategoryData : IBaseData<Category>
+    public interface ICouponBusiness : IBaseBusiness<Coupon>
     {
     }
 }

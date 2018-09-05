@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart.Data.Interface
 {
-    interface ICategoryData : IBaseData<Category>
+    public interface ICampaignData : IBaseData<Campaign>
     {
     }
 }

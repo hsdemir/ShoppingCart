@@ -3,10 +3,7 @@ using System.Collections.Generic;
 
 namespace ShoppingCart.Data.Interface
 {
-    public interface IProductData
+    public interface IProductData : IBaseData<Product>
     {
-        List<Product> GetList();
-        Product GetById(int id);
-        Product GetByTitle(string title);
     }
 }

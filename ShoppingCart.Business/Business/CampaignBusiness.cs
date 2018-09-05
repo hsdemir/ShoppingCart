@@ -1,24 +1,23 @@
-﻿using ShoppingCart.Business.Interface;
+﻿using ShoppingCart.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
-using ShoppingCart.Data;
 
 namespace ShoppingCart.Business.Business
 {
-    public class CategoryBusiness : ICategoryBusiness
+    public class CampaignBusiness : ICampaignBusiness
     {
-        public Category GetById(int id)
+        public Campaign GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Category GetByTitle(string title)
+        public Campaign GetByTitle(string title)
         {
             throw new NotImplementedException();
         }
 
-        public List<Category> GetList()
+        public List<Campaign> GetList()
         {
             throw new NotImplementedException();
         }

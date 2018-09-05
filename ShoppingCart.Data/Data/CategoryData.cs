@@ -8,7 +8,8 @@ namespace ShoppingCart.Data
 {
     public class CategoryData : ICategoryData
     {
-        public List<Category> _categoryList = new List<Category> {
+        //Database
+        private readonly List<Category> _categoryList = new List<Category> {
             new Category { Id = 1, Title = "Giyim", Parent = null },
             new Category { Id = 10, Title = "T-shirt", Parent = new Category{ Id = 1, Title = "Giyim" } },
             new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } },

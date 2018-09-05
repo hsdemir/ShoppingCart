@@ -40,15 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CampaignBusiness.cs" />
     <Compile Include="Business\CartBusiness.cs" />
     <Compile Include="Business\CategoryBusiness.cs" />
+    <Compile Include="Business\CouponBusiness.cs" />
     <Compile Include="Business\ProductBusiness.cs" />
+    <Compile Include="Interface\IBaseBusiness.cs" />
     <Compile Include="Interface\ICampaignBusiness.cs" />
     <Compile Include="Interface\ICartBusiness.cs" />
+    <Compile Include="Interface\ICategoryBusiness.cs" />
+    <Compile Include="Interface\ICouponBusiness.cs" />
     <Compile Include="Interface\IProductBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShoppingCart.Data\ShoppingCart.Data.csproj">
+      <Project>{55553e85-8c3c-41fb-bb3a-3c884e0a060f}</Project>
+      <Name>ShoppingCart.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShoppingCart.Model\ShoppingCart.Model.csproj">
       <Project>{9BABAB15-9C24-4E7C-B1C8-7DEEE4FD568F}</Project>
       <Name>ShoppingCart.Model</Name>
