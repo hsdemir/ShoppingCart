@@ -2,29 +2,35 @@
 using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
+using ShoppingCart.Data.Interface;
 
 namespace ShoppingCart.Business
 {
     public class ProductBusiness : IProductBusiness
     {
-        public static string _test;
-        public ProductBusiness()
+        private IProductData _productData;
+        public ProductBusiness(IProductData productData)
         {
-            _test = "test_val_1";
-        }
-        public Product GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Product GetByTitle(string title)
-        {
-            throw new NotImplementedException();
+            _productData = productData;
         }
 
         public List<Product> GetList()
         {
-            throw new NotImplementedException();
+            return _productData.GetList();
+        }
+        public Product GetById(int id)
+        {
+            return _productData.GetById(id);
+        }
+
+        public List<Product> GetByCategoryId(int categoryId)
+        {
+            return _productData.GetByCategoryId(categoryId);
+        }
+
+        public Product GetByTitle(string title)
+        {
+            return _productData.GetByTitle(title);
         }
     }
 }

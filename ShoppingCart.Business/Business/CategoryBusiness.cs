@@ -3,29 +3,36 @@ using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 using ShoppingCart.Data;
+using ShoppingCart.Data.Interface;
 
 namespace ShoppingCart.Business
 {
     public class CategoryBusiness : ICategoryBusiness
     {
-        public static string _test;
-        public CategoryBusiness()
+        private ICategoryData _categoryData;
+        public CategoryBusiness(ICategoryData categoryData)
         {
-            _test = "test_val_1";
-        }
-        public Category GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Category GetByTitle(string title)
-        {
-            throw new NotImplementedException();
+            _categoryData = categoryData;
         }
 
         public List<Category> GetList()
         {
-            throw new NotImplementedException();
+            return _categoryData.GetList();
+        }
+
+        public Category GetById(int id)
+        {
+            return _categoryData.GetById(id);
+        }
+
+        public List<Category> GetByParentId(int categoryId)
+        {
+            return _categoryData.GetByParentId(categoryId);
+        }
+
+        public Category GetByTitle(string title)
+        {
+            return _categoryData.GetByTitle(title);
         }
     }
 }

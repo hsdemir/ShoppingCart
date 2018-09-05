@@ -41,6 +41,10 @@ namespace ShoppingCart.Data
         {
             return _categoryList.FirstOrDefault(x => x.Id == id);
         }
+        public List<Category> GetByParentId(int categoryId)
+        {
+            return _categoryList.Where(x => x.Parent.Id == categoryId).ToList();
+        }
 
         public Category GetByTitle(string title)
         {

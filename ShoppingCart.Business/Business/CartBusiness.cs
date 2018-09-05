@@ -7,17 +7,18 @@ namespace ShoppingCart.Business
 {
     public class CartBusiness : ICartBusiness
     {
-        public bool AddProduct(Product product, int amount)
+        public Cart AddProduct(Cart cart, Product product)
+        {
+            cart.ProductList.Add(product);
+            return cart;
+        }
+
+        public bool ApplyCampaigns(Cart cart, List<Campaign> campaignList)
         {
             throw new NotImplementedException();
         }
 
-        public bool ApplyCampaigns(List<Campaign> campaignList)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool ApplyCoupon(Coupon coupon)
+        public bool ApplyCoupon(Cart cart, Coupon coupon)
         {
             throw new NotImplementedException();
         }

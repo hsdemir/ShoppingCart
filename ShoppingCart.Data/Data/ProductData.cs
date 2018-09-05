@@ -27,6 +27,11 @@ namespace ShoppingCart.Data
             return _productList.FirstOrDefault(x => x.Id == id);
         }
 
+        public List<Product> GetByCategoryId(int categoryId)
+        {
+            return _productList.Where(x => x.Category.Id == categoryId).ToList();
+        }
+
         public Product GetByTitle(string title)
         {
             return _productList.FirstOrDefault(x => x.Title == title);

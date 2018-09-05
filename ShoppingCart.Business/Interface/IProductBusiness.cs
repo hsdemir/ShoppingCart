@@ -5,5 +5,6 @@ namespace ShoppingCart.Business.Interface
 {
     public interface IProductBusiness : IBaseBusiness<Product>
     {
+        List<Product> GetByCategoryId(int categoryId);
     }
 }

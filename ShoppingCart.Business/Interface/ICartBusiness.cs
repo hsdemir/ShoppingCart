@@ -9,8 +9,8 @@ namespace ShoppingCart.Business.Interface
 {
     public interface ICartBusiness
     {
-        bool AddProduct(Product product, int amount);
-        bool ApplyCampaigns(List<Campaign> campaignList);
-        bool ApplyCoupon(Coupon coupon);
+        Cart AddProduct(Cart cart, Product product);
+        bool ApplyCampaigns(Cart cart, List<Campaign> campaignList);
+        bool ApplyCoupon(Cart cart, Coupon coupon);
     }
 }

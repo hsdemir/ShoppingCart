@@ -9,5 +9,6 @@ namespace ShoppingCart.Data.Interface
 {
     public interface ICampaignData : IBaseData<Campaign>
     {
+        List<Campaign> GetByCategoryId(int categoryId);
     }
 }
