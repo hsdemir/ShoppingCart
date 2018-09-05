@@ -10,8 +10,9 @@ namespace ShoppingCart.Model
     {
         public int Id { get; set; }
         public List<Product> ProductList { get; set; }
-        public List<Campaign> CampaignList { get; set; }
+        public List<Campaign> ValidCampaigns { get; set; }
         public Coupon Coupon { get; set; }
-        public decimal Quantity { get; set; }
+        public double Quantity { get; set; }
+        public double DiscountQuantity { get; set; }
     }
 }

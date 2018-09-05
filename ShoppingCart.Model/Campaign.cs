@@ -13,6 +13,6 @@ namespace ShoppingCart.Model
         public int MinimumProduct { get; set; }
         public int Discount { get; set; }
         public DiscountType DiscountType { get; set; }
-        public Category Category { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

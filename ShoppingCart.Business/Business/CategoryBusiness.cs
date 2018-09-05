@@ -30,9 +30,9 @@ namespace ShoppingCart.Business
             return _categoryData.GetByParentId(categoryId);
         }
 
-        public Category GetByTitle(string title)
+        public List<Category> GetBySearchTitle(string title)
         {
-            return _categoryData.GetByTitle(title);
+            return _categoryData.GetBySearchTitle(title);
         }
     }
 }

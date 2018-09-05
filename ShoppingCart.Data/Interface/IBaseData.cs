@@ -6,6 +6,6 @@ namespace ShoppingCart.Data.Interface
     {
         List<T> GetList();
         T GetById(int id);
-        T GetByTitle(string title);
+        List<T> GetBySearchTitle(string title);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using ShoppingCart.Business.Interface;
-using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 using ShoppingCart.Data.Interface;
@@ -29,9 +28,9 @@ namespace ShoppingCart.Business
             return _campaignData.GetByCategoryId(categoryId);
         }
 
-        public Campaign GetByTitle(string title)
+        public List<Campaign> GetBySearchTitle(string title)
         {
-            return _campaignData.GetByTitle(title);
+            return _campaignData.GetBySearchTitle(title);
         }
     }
 }

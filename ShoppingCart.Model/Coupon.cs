@@ -10,6 +10,7 @@ namespace ShoppingCart.Model
     {
         public string Code { get; set; }
         public string Title { get; set; }
-        public decimal MinimumPrice { get; set; }
+        public double MinimumPrice { get; set; }
+        public int Discount { get; set; }
     }
 }

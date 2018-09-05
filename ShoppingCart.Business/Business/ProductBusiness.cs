@@ -28,9 +28,9 @@ namespace ShoppingCart.Business
             return _productData.GetByCategoryId(categoryId);
         }
 
-        public Product GetByTitle(string title)
+        public List<Product> GetBySearchTitle(string title)
         {
-            return _productData.GetByTitle(title);
+            return _productData.GetBySearchTitle(title);
         }
     }
 }

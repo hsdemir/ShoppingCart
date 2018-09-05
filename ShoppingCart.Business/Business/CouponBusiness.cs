@@ -24,9 +24,9 @@ namespace ShoppingCart.Business
             return _couponData.GetById(id);
         }
 
-        public Coupon GetByTitle(string title)
+        public List<Coupon> GetBySearchTitle(string title)
         {
-            return _couponData.GetByTitle(title);
+            return _couponData.GetBySearchTitle(title);
         }
     }
 }
