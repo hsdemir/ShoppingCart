@@ -11,7 +11,7 @@ namespace ShoppingCart.Model
         public int Id { get; set; }
         public string Title { get; set; }
         public double Price { get; set; }
-        public int Amount { get; set; }
+        public int Quantity { get; set; }
         public Category Category { get; set; }
     }
 }
