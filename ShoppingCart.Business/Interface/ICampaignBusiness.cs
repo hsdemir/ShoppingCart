@@ -1,9 +1,9 @@
 ﻿using ShoppingCart.Business.Interface;
 using ShoppingCart.Model;
 
-namespace ShoppingCart.Business.Interfaces
+namespace ShoppingCart.Business.Interface
 {
-    interface ICampaignBusiness : IBaseBusiness<Campaign>
+    public interface ICampaignBusiness : IBaseBusiness<Campaign>
     {
     }
 }

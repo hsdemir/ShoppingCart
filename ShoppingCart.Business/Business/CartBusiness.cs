@@ -1,9 +1,9 @@
-﻿using ShoppingCart.Business.Interfaces;
+﻿using ShoppingCart.Business.Interface;
 using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 
-namespace ShoppingCart.Business.Business
+namespace ShoppingCart.Business
 {
     public class CartBusiness : ICartBusiness
     {

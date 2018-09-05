@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 
-namespace ShoppingCart.Business.Business
+namespace ShoppingCart.Business
 {
     public class CouponBusiness : ICouponBusiness
     {

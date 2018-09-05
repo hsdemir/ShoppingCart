@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 
-namespace ShoppingCart.Data.Data
+namespace ShoppingCart.Data
 {
     public class CampaignData : ICampaignData
     {

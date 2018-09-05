@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoppingCart.Business.Interfaces
+namespace ShoppingCart.Business.Interface
 {
     public interface ICartBusiness
     {

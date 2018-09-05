@@ -3,10 +3,15 @@ using System;
 using System.Collections.Generic;
 using ShoppingCart.Model;
 
-namespace ShoppingCart.Business.Business
+namespace ShoppingCart.Business
 {
     public class ProductBusiness : IProductBusiness
     {
+        public static string _test;
+        public ProductBusiness()
+        {
+            _test = "test_val_1";
+        }
         public Product GetById(int id)
         {
             throw new NotImplementedException();
