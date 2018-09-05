@@ -11,6 +11,6 @@ namespace ShoppingCart.Business.Interface
     {
         Cart AddProduct(Cart cart, Product product);
         Cart ApplyCampaigns(Cart cart);
-        Cart ApplyCoupon(Cart cart, Coupon coupon);
+        Cart ApplyCoupon(Cart cart, string couponCode);
     }
 }

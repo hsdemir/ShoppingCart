@@ -9,9 +9,11 @@ namespace ShoppingCart.Business
     public class CartBusiness : ICartBusiness
     {
         private ICampaignBusiness _campaignBusiness;
-        public CartBusiness(ICampaignBusiness campaignBusiness)
+        private ICouponBusiness _couponBusiness;
+        public CartBusiness(ICampaignBusiness campaignBusiness, ICouponBusiness couponBusiness)
         {
             _campaignBusiness = campaignBusiness;
+            _couponBusiness = couponBusiness;
         }
 
         public Cart AddProduct(Cart cart, Product product)
@@ -49,7 +51,7 @@ namespace ShoppingCart.Business
 
                 if (cart.ValidCampaign.DiscountType == DiscountType.Rate) //Kampanyanın indirim tipi oran mı?
                 {
-                    cart.DiscountAmount = cart.Amount * (cart.ValidCampaign.Discount * 0.01); //Kampanyadaki indirim oranı kadar indirim yapıldı.
+                    cart.DiscountAmount = cart.Amount - (cart.Amount * (cart.ValidCampaign.Discount * 0.01)); //Kampanyadaki indirim oranı kadar indirim yapıldı.
                 }
                 else if (cart.ValidCampaign.DiscountType == DiscountType.Amount) //Kampanyanın indirim tipi tutar mı?
                 {
@@ -61,9 +63,26 @@ namespace ShoppingCart.Business
             return cart;
         }
 
-        public bool ApplyCoupon(Cart cart, Coupon coupon)
+        public Cart ApplyCoupon(Cart cart, string couponCode)
         {
-            throw new NotImplementedException();
+            var coupon = _couponBusiness.GetByCode(couponCode); //Kupon koduna göre kuponu getir.
+
+            if (coupon != null) //Kupon var mı?
+            {
+                if (coupon.MinimumAmount <= cart.Amount) //Sepet tutarı, kuponun minimum tutarına eşit yada fazla mı?
+                {
+                    if (cart.DiscountAmount == 0) //Sepete daha önce indirim uygulanmadı ise.
+                    {
+                       cart.DiscountAmount = cart.Amount - (cart.Amount * (coupon.Discount * 0.01)); //Sepet toplam tutarına indirim uygula.
+                    }
+                    else //Sepete daha önce indirim uygulandı ise.
+                    {
+                        cart.DiscountAmount = cart.DiscountAmount - (cart.Amount * (coupon.Discount * 0.01)); //Sepet indirim tutarına indirim uygula.
+                    }
+                }
+            }
+
+            return cart;
         }
     }
 }

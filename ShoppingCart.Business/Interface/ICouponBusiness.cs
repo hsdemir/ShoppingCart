@@ -9,5 +9,6 @@ namespace ShoppingCart.Business.Interface
 {
     public interface ICouponBusiness : IBaseBusiness<Coupon>
     {
+        Coupon GetByCode(string code);
     }
 }
