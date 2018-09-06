@@ -9,14 +9,14 @@ namespace ShoppingCart.Data
     public class ProductData : IProductData
     {
         //Database
-        private readonly List<Product> _productList = new List<Product> {
+        private List<Product> _productList = new List<Product> {
             new Product { Id = 100, Title = "Vincent Erkek Sweatshirt", Price = 120, Category = new Category { Id = 10, Title = "T-shirt", Parent = new Category{ Id = 1, Title = "Giyim" } } },
-            new Product { Id = 101, Title = "U.S Polo Erkek Gömlek", Price = 95, Category = new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } } },
-            new Product { Id = 102, Title = "Mavi Kot Pantolon", Price = 145, Category = new Category { Id = 12, Title = "Panloton", Parent = { Id = 1, Title = "Giyim" } } },
-            new Product { Id = 103, Title = "Koton Gri Kanvas Pantolon", Price = 60, Category = new Category { Id = 12, Title = "Panloton", Parent = { Id = 1, Title = "Giyim" } } },
-            new Product { Id = 104, Title = "U.S Polo Mavi Erkek Gömlek", Price = 85, Category = new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } } },
-            new Product { Id = 105, Title = "H&M Kırmızı Bayan Gömlek", Price = 85, Category = new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } } },
-            new Product { Id = 106, Title = "Kiğılı Siyah Erkek Gömlek", Price = 85.50, Category = new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 101, Title = "U.S Polo Erkek Gömlek", Price = 95, Category = new Category { Id = 11, Title = "Gömlek", Parent = new Category { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 102, Title = "Mavi Kot Pantolon", Price = 145, Category = new Category { Id = 12, Title = "Panloton", Parent = new Category { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 103, Title = "Koton Gri Kanvas Pantolon", Price = 60, Category = new Category { Id = 12, Title = "Panloton", Parent = new Category { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 104, Title = "U.S Polo Mavi Erkek Gömlek", Price = 85, Category = new Category { Id = 11, Title = "Gömlek", Parent = new Category { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 105, Title = "H&M Kırmızı Bayan Gömlek", Price = 85, Category = new Category { Id = 11, Title = "Gömlek", Parent = new Category { Id = 1, Title = "Giyim" } } },
+            new Product { Id = 106, Title = "Kiğılı Siyah Erkek Gömlek", Price = 85.50, Category = new Category { Id = 11, Title = "Gömlek", Parent = new Category { Id = 1, Title = "Giyim" } } },
 
             new Product { Id = 200, Title = "Mavi Kol Saati", Price = 560, Category = new Category { Id = 21, Title = "Saat", Parent = new Category { Id = 2, Title = "Aksesuar" } } },
             new Product { Id = 201, Title = "Siyah Güneş Gözlüğü", Price = 560, Category = new Category { Id = 20, Title = "Güneş Gözlüğü", Parent = new Category { Id = 2, Title = "Aksesuar" } } },

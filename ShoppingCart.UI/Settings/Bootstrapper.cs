@@ -29,6 +29,7 @@ namespace ShoppingCart.UI.Settings
             builder.RegisterType<CartBusiness>().As<ICartBusiness>().SingleInstance();
             builder.RegisterType<CampaignBusiness>().As<ICampaignBusiness>().SingleInstance();
             builder.RegisterType<CouponBusiness>().As<ICouponBusiness>().SingleInstance();
+            builder.RegisterType<DeliveryBusiness>().As<IDeliveryBusiness>().SingleInstance();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

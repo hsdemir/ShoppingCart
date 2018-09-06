@@ -16,9 +16,12 @@ namespace ShoppingCart.Business
             _couponBusiness = couponBusiness;
         }
 
-        public Cart AddProduct(Cart cart, Product product)
+        public Cart AddProduct(Cart cart, Product product, int Quantity)
         {
+            if (cart.Products == null) cart.Products = new List<Product>();
+            product.Quantity = Quantity;
             cart.Products.Add(product);
+
             return cart;
         }
 

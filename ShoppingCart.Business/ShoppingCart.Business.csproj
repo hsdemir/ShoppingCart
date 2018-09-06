@@ -44,12 +44,14 @@
     <Compile Include="Business\CartBusiness.cs" />
     <Compile Include="Business\CategoryBusiness.cs" />
     <Compile Include="Business\CouponBusiness.cs" />
+    <Compile Include="Business\DeliveryBusiness.cs" />
     <Compile Include="Business\ProductBusiness.cs" />
     <Compile Include="Interface\IBaseBusiness.cs" />
     <Compile Include="Interface\ICampaignBusiness.cs" />
     <Compile Include="Interface\ICartBusiness.cs" />
     <Compile Include="Interface\ICategoryBusiness.cs" />
     <Compile Include="Interface\ICouponBusiness.cs" />
+    <Compile Include="Interface\IDeliveryBusiness.cs" />
     <Compile Include="Interface\IProductBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\DeliveryConstants.cs" />
     <Compile Include="Data\CategoryData.cs" />
     <Compile Include="Data\CampaignData.cs" />
     <Compile Include="Data\CouponData.cs" />

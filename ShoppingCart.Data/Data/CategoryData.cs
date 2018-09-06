@@ -9,12 +9,12 @@ namespace ShoppingCart.Data
     public class CategoryData : ICategoryData
     {
         //Database
-        private readonly List<Category> _categoryList = new List<Category> {
+        private  List<Category> _categoryList = new List<Category> {
             new Category { Id = 1, Title = "Giyim", Parent = null },
             new Category { Id = 10, Title = "T-shirt", Parent = new Category{ Id = 1, Title = "Giyim" } },
-            new Category { Id = 11, Title = "Gömlek", Parent = { Id = 1, Title = "Giyim" } },
-            new Category { Id = 12, Title = "Panloton", Parent = { Id = 1, Title = "Giyim" } },
-            new Category { Id = 13, Title = "Jean", Parent = { Id = 1, Title = "Giyim" } },
+            new Category { Id = 11, Title = "Gömlek", Parent = new Category { Id = 1, Title = "Giyim" } },
+            new Category { Id = 12, Title = "Panloton", Parent = new Category { Id = 1, Title = "Giyim" } },
+            new Category { Id = 13, Title = "Jean", Parent = new Category { Id = 1, Title = "Giyim" } },
 
             new Category { Id = 2, Title = "Aksesuar", Parent = null },
             new Category { Id = 20, Title = "Güneş Gözlüğü", Parent = new Category { Id = 2, Title = "Aksesuar"} },
