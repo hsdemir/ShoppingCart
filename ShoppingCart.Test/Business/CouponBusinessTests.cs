@@ -7,13 +7,13 @@ using ShoppingCart.Model;
 namespace ShoppingCart.Test.Business
 {
     [TestClass]
-    public class CampaignBusinessTests
+    public class CouponBusinessTests
     {
         private ICampaignBusiness _campaignBusiness;
         private ICouponBusiness _couponBusiness;
         private IProductBusiness _productBusiness;
         private ICartBusiness _cartBusiness;
-        public CampaignBusinessTests()
+        public CouponBusinessTests()
         {
             _campaignBusiness = new CampaignBusiness(new CampaignData());
             _couponBusiness = new CouponBusiness(new CouponData());
