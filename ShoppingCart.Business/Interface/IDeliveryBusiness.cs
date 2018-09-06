@@ -4,6 +4,6 @@ namespace ShoppingCart.Business.Interface
 {
     public interface IDeliveryBusiness
     {
-        Delivery CostCalculator(Cart cart); 
+        Cart CostCalculator(Cart cart); 
     }
 }

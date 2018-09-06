@@ -87,5 +87,15 @@ namespace ShoppingCart.Business
 
             return cart;
         }
+
+        public double GetCampaignDiscount(Cart cart)
+        {
+            return cart.ValidCampaign?.Discount ?? 0;
+        }
+
+        public double GetCouponDiscount(Cart cart)
+        {
+            return cart.ValidCoupon?.Discount ?? 0;
+        }
     }
 }

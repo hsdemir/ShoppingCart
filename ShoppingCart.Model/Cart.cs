@@ -14,5 +14,6 @@ namespace ShoppingCart.Model
         public Coupon ValidCoupon { get; set; }
         public double Amount { get; set; }
         public double DiscountAmount { get; set; }
+        public Delivery Delivery { get; set; }
     }
 }

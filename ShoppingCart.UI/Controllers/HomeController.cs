@@ -51,12 +51,9 @@ namespace ShoppingCart.UI.Controllers
 
             //Kupon koduna ait kupon varsa ve indirimi geçerli ise uygula
             cart = _cartBusiness.ApplyCoupon(cart, "numubt1m41uf"); //250 TL alışveriş için 20% indirim
-
-            //Teslimat nesnesini oluştur
-            var delivery = new Delivery();
-
+            
             //Sepet için teslimat tutarını hesapla
-            delivery = _deliveryBusines.CostCalculator(cart);
+            cart = _deliveryBusines.CostCalculator(cart);
 
             return View();
         }
