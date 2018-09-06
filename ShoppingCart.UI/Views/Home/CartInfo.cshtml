@@ -1,0 +1,80 @@
+﻿@model ShoppingCart.Model.Cart
+@{
+    ViewBag.Title = "CartInfo";
+}
+
+<a href="@Url.Action("Index")">Anasayfaya dön</a>
+
+<h2>Sepet ve Teslimat Bilgileri</h2>
+
+<h3>Sepetteki Ürünler</h3>
+@if (Model.Products != null && Model.Products.Count > 0)
+{
+    <table width="750">
+        <tr>
+            <th>Id</th>
+            <th>Ürün Adı</th>
+            <th>Adet</th>
+            <th>Kategori</th>
+            <th>Tutar</th>
+        </tr>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Title</td>
+                <td>@product.Quantity</td>
+                <td>@(product.Category.Parent.Title + " / " + product.Category.Title)</td>
+                <td>@product.Price TL</td>
+            </tr>
+        }
+    </table>
+}
+
+<h3>Sepet Bilgileri</h3>
+@if (Model.Delivery != null)
+{
+    <table width="400">
+        <tr>
+            <th>Toplam Tutar</th>
+            <td>@Model.Amount TL</td>
+        </tr>
+        <tr>
+            <th>İndirimli Tutar</th>
+            <td>@Model.DiscountAmount TL</td>
+        </tr>
+        <tr>
+            <th>Yararlanılan Kampanya</th>
+            <td>@(Model.ValidCampaign?.Title ?? "-")</td>
+        </tr>
+        <tr>
+            <th>Yararlanılan Kupon</th>
+            <td>@(Model.ValidCoupon?.Title ?? "-")</td>
+        </tr>
+        <tr>
+            <th>Genel Toplam</th>
+            <td>@(Model.DiscountAmount == 0 ? Model.Amount + Model.Delivery.TotalCost : Model.DiscountAmount + Model.Delivery.TotalCost) TL</td>
+        </tr>
+    </table>
+}
+
+<h3>Teslimat Bilgileri</h3>
+@if (Model.Delivery != null)
+{
+    <table width="400">
+        <tr>
+            <th>Kategori Sayısı (farklı)</th>
+            <td>@Model.Delivery.NumberOfDeliveries adet</td>
+        </tr>
+        <tr>
+            <th>Ürün Sayısı (farklı)</th>
+            <td>@Model.Delivery.NumberOfProducts adet</td>
+        </tr>
+        <tr>
+            <th>Teslimat Tutarı</th>
+            <td>@Model.Delivery.TotalCost TL</td>
+        </tr>
+    </table>
+}
+
+

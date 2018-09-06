@@ -1,7 +1,21 @@
-﻿
+﻿@model List<ShoppingCart.Model.Campaign>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3>Kampanyalarımız</h3>
+<ul>
+    @foreach (var campaign in Model)
+    {
+        <li>@campaign.Title</li>
+    }
+</ul>
+<br />
+
+<h3>Alışverişe Başla</h3>
+<a href="@Url.Action("Kampanya1Indirimsiz")">1. Kampanya Ürünleri (İndirimsiz Alışveriş)</a><br /><br />
+<a href="@Url.Action("Kampanya1Indirimli")">1. Kampanya Ürünleri (İndirimli Alışveriş)</a><br /><br />
+<a href="@Url.Action("Kampanya2Indirimli")">2. Kampanya Ürünleri (İndirimli Alışveriş)</a><br /><br />
+<a href="@Url.Action("Kampanya3Indirimli")">3. Kampanya Ürünleri (İndirimli Alışveriş)</a>
+
 

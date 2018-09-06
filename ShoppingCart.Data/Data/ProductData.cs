@@ -39,7 +39,8 @@ namespace ShoppingCart.Data
             new Product { Id = 401, Title = "Beyaz Erkek Şort", Price = 120, Category = new Category { Id = 42, Title = "Şort", Parent = new Category { Id = 4, Title = "Spor" } } },
             new Product { Id = 402, Title = "Yeşil Bayan T-shirt", Price = 155.50, Category = new Category { Id = 41, Title = "T-shirt", Parent = new Category { Id = 4, Title = "Spor" } } },
             new Product { Id = 403, Title = "Siyah Alt Eşofman", Price = 95, Category = new Category { Id = 40, Title = "Eşofman", Parent = new Category { Id = 4, Title = "Spor" } } },
-            new Product { Id = 404, Title = "Mavi Üst Eşofman", Price = 65, Category = new Category { Id = 40, Title = "Eşofman", Parent = new Category { Id = 4, Title = "Spor" } } }
+            new Product { Id = 404, Title = "Mavi Üst Eşofman", Price = 65, Category = new Category { Id = 40, Title = "Eşofman", Parent = new Category { Id = 4, Title = "Spor" } } },
+            new Product { Id = 405, Title = "Kırmızı Çizgili Üst Eşofman", Price = 72, Category = new Category { Id = 40, Title = "Eşofman", Parent = new Category { Id = 4, Title = "Spor" } } }
         };
 
         public List<Product> GetList()

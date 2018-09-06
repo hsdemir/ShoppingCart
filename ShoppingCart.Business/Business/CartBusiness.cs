@@ -33,10 +33,9 @@ namespace ShoppingCart.Business
             {
                 foreach (var campaign in allCampaigns) //Kampanyalarda dön.
                 {
-                    var productCount = cart.Products.Where(p => campaign.Categories.Any(c => c.Id == p.Category.Id)).ToList().Count; //Sepetteki ürünlerden, kampanya kategorilerine ait olan ürün sayısını getir.
-                    var validCampaign = allCampaigns.Where(c => c.MinimumProduct <= productCount).OrderByDescending(x => x.MinimumProduct).FirstOrDefault(); //Bulunan ürün sayısına göre, en fazla ürün sayısı olan kampanyayı getir.
-                    if (validCampaign != null && (validCampaigns != null && !validCampaigns.Any(c => c.Id == validCampaign.Id)))
-                        validCampaigns.Add(validCampaign); //Bulunan geçerli kampanya id si, geçerli kampanyalar listesinde mevcut değilse, listeye ekle.
+                    var productCount = cart.Products.Where(p => campaign.Categories.Any(c => c.Id == p.Category.Parent.Id)).Select(x => x.Quantity).Sum(); //Sepetteki ürünlerden, kampanya kategorilerine ait olan ürün sayısını getir.
+                    if (campaign.MinimumProduct <= productCount) //Sepetteki ürün kategorisi uyan ürünlerin sayısı, kampanyadaki minimum ürün sayısından eşit veya büyük mü?
+                        validCampaigns.Add(campaign);
                 }
             }
 
@@ -72,11 +71,13 @@ namespace ShoppingCart.Business
 
             if (coupon != null) //Kupon var mı?
             {
+                cart.ValidCoupon = coupon; //Sepetteki geçerli kupon nesnesine kuponu ekle.
+
                 if (coupon.MinimumAmount <= cart.Amount) //Sepet tutarı, kuponun minimum tutarına eşit yada fazla mı?
                 {
                     if (cart.DiscountAmount == 0) //Sepete daha önce indirim uygulanmadı ise.
                     {
-                       cart.DiscountAmount = cart.Amount - (cart.Amount * (coupon.Discount * 0.01)); //Sepet toplam tutarına indirim uygula.
+                        cart.DiscountAmount = cart.Amount - (cart.Amount * (coupon.Discount * 0.01)); //Sepet toplam tutarına indirim uygula.
                     }
                     else //Sepete daha önce indirim uygulandı ise.
                     {
