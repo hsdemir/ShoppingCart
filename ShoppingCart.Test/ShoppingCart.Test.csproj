@@ -45,12 +45,29 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Business\CampaignBusinessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingCart.Business\ShoppingCart.Business.csproj">
+      <Project>{B4D63EE0-640F-436C-AE99-C2DACBA36BA7}</Project>
+      <Name>ShoppingCart.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingCart.Data\ShoppingCart.Data.csproj">
+      <Project>{55553E85-8C3C-41FB-BB3A-3C884E0A060F}</Project>
+      <Name>ShoppingCart.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingCart.Model\ShoppingCart.Model.csproj">
+      <Project>{9babab15-9c24-4e7c-b1c8-7deee4fd568f}</Project>
+      <Name>ShoppingCart.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

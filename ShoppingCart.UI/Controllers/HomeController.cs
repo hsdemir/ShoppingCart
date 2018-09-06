@@ -147,13 +147,13 @@ namespace ShoppingCart.UI.Controllers
 
         private Cart ApplyDiscountsAndDelivery(Cart cart, string couponCode)
         {
-            //Kampanyaları kontrol et ve uygula
+            //Kampanyaları kontrol et ve uygula.
             cart = _cartBusiness.ApplyCampaigns(cart);
 
-            //Kupon koduna ait kupon varsa ve indirimi geçerli ise uygula
+            //Kupon koduna ait kupon varsa ve indirimi geçerli ise uygula.
             cart = _cartBusiness.ApplyCoupon(cart, couponCode);
 
-            //Sepet için teslimat tutarını hesapla
+            //Sepet için teslimat tutarını hesapla.
             cart = _deliveryBusines.CostCalculator(cart);
 
             return cart;
